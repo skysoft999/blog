@@ -1,0 +1,19 @@
+# from django.shortcuts import render
+# from django.http import HttpResponse
+# from django.template.response import TemplateResponse
+
+# # Create your views here.
+# def post_list(request):
+#     print("HEllloooooooooooo")
+#     # # response = HttpResponse("Here's the text of the Web page.")
+#     # response = TemplateResponse(request, '/blog/post_list.html', {})
+#     # return response
+#     return render(request, 'post_list.html', {})
+
+from django.shortcuts import render
+from django.utils import timezone
+from .models import Post
+
+def post_list(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'post_list.html', {'posts': posts})
