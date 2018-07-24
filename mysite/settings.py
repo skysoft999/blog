@@ -122,9 +122,4 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 ALOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
-# TEMPLATE_DIRS = (
-#     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-#     # Always use forward slashes, even on Windows.
-#     # Don't forget to use absolute paths, not relative paths.
-#     '/home/sanu/Dev/djangogirls/mysite/blog/blog/templates',
-# )
+LOGIN_REDIRECT_URL = '/'
